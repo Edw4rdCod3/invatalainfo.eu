@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ro" class="" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cel mai mare divizor comun folosind scăderi repetate">
+    <title>Problema CMMDC</title>
+    
+    <!-- Highlight.js Temă Monokai -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+    <!-- DaisyUI și Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {},
+            },
+            plugins: [daisyui],
+            daisyui: {
+                themes: ["dark", "dark"],
+            },
+        }
+    </script>
+
+    <!-- Font Awesome for icons -->
+  
+</head>
+
+<body class="bg-800 text-gray-400 flex flex-col min-h-screen overflow-x-hidden ">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full flex-col z-10">
+        <div class="w-full navbar bg-base-100">
+            <div class="flex-none">
+              <button class="btn btn-square btn-ghost md:hidden" id="menu-btn">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  class="inline-block h-5 w-5 stroke-current">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+              </button>
+            </div>
+            <div class="flex-1">
+              <a href="index.html" class="btn btn-ghost text-xl">📖 invatalainfo.eu</a>
+            </div>
+            <div class="flex-none">
+              <button class="btn btn-square btn-ghost">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  class="inline-block h-5 w-5 stroke-current">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path>
+                </svg>
+              </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar Menu (Hidden on mobile, visible on larger screens) -->
+    <ul id="sidebar-menu" class="menu z-10 bg-base-100 fixed w-70 min-h-screen my-16 transform -translate-x-full transition-transform duration-300 ease-in-out md:-translate-x-0 md:block">
+      <li>
+          <details open>
+            <summary>
+            Probleme clasa IX
+            </summary>
+            <ul>
+              <li><a href="cea-mai-mare-cifra.html">Cea mai mare cifra</a></li>
+              <li><a href="cea-mai-mica-cifra.html">Cea mai mica cifra</a></li>
+              <li><a href="cmmdc.html">CMMDC</a></li>
+              <li><a href="descompunere-factori-primi.html">descompunere in factori primi</a></li>
+              <li><a href="media-aritmetica-a-cifrelor.html">Media Aritmetica a cifrelor</a></li>
+              <li><a href="prima-cifra-a-unui-numar.html">Prima cifra a unui numar</a></li>
+              <li><a href="produsul-cifrelor.html">Produsul cifrelor</a></li>
+              <li><a href="suma-cifrelor-impare.html">Suma cifrelor impare</a></li>
+              <li><a href="suma-cifrelor-pare.html">Suma cifrelor pare</a></li>
+              <li><a href="suma-cifrelor-unui-numar.html">Suma cifrelor unui numar</a></li>
+
+            </ul>
+          </details>
+        </li>
+    </ul>
+
+    <!-- Main Content -->
+    <div class="container mx-auto  p-4 flex-grow lg:w-2/4 justify-center">
+        <div class="flex-grow p-4">
+            <h2 class="text-3xl font-bold mb-4 mt-10" id="problem1">📚Problema: Cel mai Mare Divizor Comun</h2>
+            <p class="mb-4">Se citesc de la tastatură două numere întregi <span class="badge badge-primary">a</span> și <span class="badge badge-primary">b</span>. Determinați și afișați pe ecran cel mai mare divizor comun (CMMDC) al acestora folosind metoda scăderilor repetate..</p>
+
+            <div class="relative">
+
+
+
+                <!-- Code Block -->
+<pre ><code class="cpp text-xs  rounded-md bg-base-200 my-10">
+
+#include <iostream>
+using namespace std;
+
+int main() {
+
+    int a, b;
+    
+    cout << "Introduceți numerele a și b: ";
+    cin >> a >> b;
+
+    while (a != b) {
+        if (a > b)
+            a = a - b;
+        else
+            b = b - a;
+    }
+
+    cout << "Cmmdc = " << a << endl;
+
+    return 0;
+}
+                        
+                        
+</code></pre>
+            </div>
+
+            <!-- Input and Output Sections -->
+            <h3 class="text-2xl font-bold mb-2">• Exemplu de Input</h3>
+            <pre><code class="language-bash cpp rounded-md bg-base-200">10 15</code></pre>
+
+            <h3 class="text-2xl font-bold mb-2">• Exemplu de Output</h3>
+            <pre><code class="language-bash cpp rounded-md bg-base-200">Cmmdc = 5</code></pre>
+
+
+
+        </div>
+    </div>
+
+    <!-- JavaScript for Copy Code Button and Menu Animation -->
+    <script>
+        hljs.highlightAll(); 
+
+
+
+
+        // Toggle menu on mobile with animation
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('sidebar-menu');
+            menu.classList.toggle('-translate-x-full');
+        });
+    </script>
+     
+
+</body>
+</html>

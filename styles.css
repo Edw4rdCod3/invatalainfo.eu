@@ -1,0 +1,12 @@
+
+
+
+    pre code {
+        background-color: #1e1e1e; /* Dark background */
+        color: #ffffff; /* Light text for contrast */
+        padding: 1rem;
+        border-radius: 0.5rem;
+        display: block;
+        overflow-x: auto;
+    }
+
