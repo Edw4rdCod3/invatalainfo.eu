@@ -97,6 +97,37 @@
 
 
         <!--Footer-->
+<!-- Cookie Consent Banner -->
+<div id="cookieConsent" style="position: fixed; bottom: 0; width: 100%; background-color: #000; color: #fff; text-align: center; padding: 10px 0; display: none;">
+  This site uses cookies to enhance your experience. By continuing to browse, you agree to our <a href="cookies-policy.html" style="color: #4CAF50;">cookie policy</a>.
+  <button id="acceptCookies" style="background-color: #4CAF50; color: #fff; border: none; padding: 5px 10px; margin-left: 10px;">Accept</button>
+</div>
+
+<script>
+  // Check if the user has already accepted cookies
+  if (!localStorage.getItem('cookiesAccepted')) {
+    document.getElementById('cookieConsent').style.display = 'block';
+  }
+
+  // When user clicks "Accept"
+  document.getElementById('acceptCookies').addEventListener('click', function() {
+    // Hide the consent banner
+    document.getElementById('cookieConsent').style.display = 'none';
+
+    // Set local storage to mark that cookies are accepted
+    localStorage.setItem('cookiesAccepted', 'true');
+
+    // Initialize Google Analytics after consent
+    (function() {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXX'); // Replace with your Google Analytics ID
+    })();
+  });
+</script>
+
+
 
       </div>
     </div>
