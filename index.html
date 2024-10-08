@@ -11,13 +11,7 @@
 
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-V940RDVMRW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-V940RDVMRW');
-</script>
 
 
 
@@ -118,13 +112,12 @@
     localStorage.setItem('cookiesAccepted', 'true');
 
     // Initialize Google Analytics after consent
-    (function() {
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXX'); // Replace with your Google Analytics ID
-    })();
-  });
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V940RDVMRW');
 </script>
 
 
