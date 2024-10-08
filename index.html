@@ -20,15 +20,20 @@
         <script src="https://cdn.tailwindcss.com"></script>
     
         <script>
-            tailwind.config = {
-                theme: {
-                    extend: {},
-                },
-                plugins: [daisyui],
-                daisyui: {
-                    themes: false,
-                },
-            }
+    module.exports = {
+  theme: {
+    extend: {},
+  },
+  plugins: [
+    require('daisyui'),
+  ],
+  daisyui: {
+    themes: [
+      'dark', // or 'light', or any other theme you prefer
+    ],
+  },
+};
+
         </script>
 
 
