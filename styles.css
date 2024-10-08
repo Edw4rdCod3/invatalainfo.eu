@@ -1,4 +1,7 @@
 
+:root {
+  --daisyui-theme: 'dark'; /* or your chosen theme */
+}
 
 
     pre code {
